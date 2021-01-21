@@ -35,7 +35,7 @@
                     @enderror
                 </div>
 
-                <div>
+                <div class="mt-6">
                     <label for="name" class="block text-sm font-medium leading-5 text-gray-700">
                         Username
                     </label>
