@@ -20,8 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('foto_profil')->nullable();
-            $table->integer('total_skor_nilai');
+            $table->integer('total_skor_nilai')->default(0);
         });
     }
 

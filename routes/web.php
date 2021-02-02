@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ExploreController;
+use App\Http\Livewire\Html;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Passwords\Confirm;
 use App\Http\Livewire\Auth\Passwords\Email;
@@ -21,7 +24,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
+Route::middleware('auth')->group(function () {
+    Route::get('email/verify/{id}/{hash}', EmailVerificationController::class)
+        ->middleware('signed')
+        ->name('verification.verify');
+
+    Route::get('logout', LogoutController::class)
+        ->name('logout');
+
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/explore', [ExploreController::class, 'index'])->name('explore');
+    Route::get('/html', Html::class)->name('html');
+});
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
@@ -44,13 +58,4 @@ Route::middleware('auth')->group(function () {
 
     Route::get('password/confirm', Confirm::class)
         ->name('password.confirm');
-});
-
-Route::middleware('auth')->group(function () {
-    Route::get('email/verify/{id}/{hash}', EmailVerificationController::class)
-        ->middleware('signed')
-        ->name('verification.verify');
-
-    Route::post('logout', LogoutController::class)
-        ->name('logout');
 });
