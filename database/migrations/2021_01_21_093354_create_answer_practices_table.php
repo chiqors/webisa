@@ -17,7 +17,7 @@ class CreateAnswerPracticesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('practice_id');
-            $table->integer('jawaban_siswa');
+            $table->text('jawaban_siswa');
             $table->integer('skor_nilai');
         });
     }

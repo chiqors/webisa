@@ -4,6 +4,8 @@ use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ExploreController;
+use App\Http\Controllers\LeaderboardController;
+use App\Http\Controllers\PracticeController;
 use App\Http\Livewire\Html;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Passwords\Confirm;
@@ -34,7 +36,14 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/explore', [ExploreController::class, 'index'])->name('explore');
-    Route::get('/html', Html::class)->name('html');
+    Route::get('/explore/html', Html::class)->name('html');
+
+    Route::get('/practice', [PracticeController::class, 'index'])->name('practice');
+    Route::get('/practice/{kategori}', [PracticeController::class, 'kategori'])->name('practice-kategori');
+    Route::get('/practice_question/{id}', [PracticeController::class, 'question'])->name('practice-question');
+    Route::post('/practice_answer/{id}', [PracticeController::class, 'answer'])->name('practice_answer');
+
+    Route::get('/leaderboards/', [LeaderboardController::class, 'index'])->name('leaderboard');
 });
 
 Route::middleware('guest')->group(function () {

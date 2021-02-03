@@ -19,6 +19,7 @@ class CreatePracticesTable extends Migration
             $table->text('pertanyaan');
             $table->string('jawaban');
             $table->integer('skor_nilai');
+            $table->string('kategori');
         });
     }
 

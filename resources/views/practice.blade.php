@@ -16,21 +16,21 @@
     <div class="flex flex-row w-full text-gray-700 bg-red-500 dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div class="container flex flex-col m-auto">
             <div class="flex flex-row justify-center mb-5">
-                <a href="{{ url('/explore/html') }}"
+                <a href="{{ url('practice/html') }}"
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     HTML
                 </a>
-                <a href="{{ url('/explore/css') }}"
+                <a href="{{ url('practice/css') }}"
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-900 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     CSS
                 </a>
             </div>
             <div class="flex flex-row justify-center mb-5">
-                <a href="{{ url('/explore/js') }}"
+                <a href="{{ url('practice/js') }}"
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-900 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     JS
                 </a>
-                <a href="{{ url('/explore/php') }}"
+                <a href="{{ url('practice/php') }}"
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-900 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     PHP
                 </a>
