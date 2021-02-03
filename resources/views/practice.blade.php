@@ -14,6 +14,11 @@
         </x-slot>
     </x-sidebar>
     <div class="flex flex-row w-full text-gray-700 bg-red-500 dark-mode:text-gray-200 dark-mode:bg-gray-800">
+        <div class="flex flex-col">
+            <a href="{{ url('/') }}" class="w-24 px-4 py-2">
+                <img src="{{ asset('/assets/img/back.png') }}" alt="">
+            </a>
+        </div>
         <div class="container flex flex-col m-auto">
             <div class="flex flex-row justify-center mb-5">
                 <a href="{{ url('practice/html') }}"

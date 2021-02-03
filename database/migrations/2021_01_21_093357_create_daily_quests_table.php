@@ -19,6 +19,7 @@ class CreateDailyQuestsTable extends Migration
             $table->text('pertanyaan');
             $table->string('jawaban');
             $table->integer('skor_nilai');
+            $table->date('set_time');
         });
     }
 

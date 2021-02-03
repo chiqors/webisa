@@ -2,17 +2,18 @@
 
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\DailyQuestController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\PracticeController;
-use App\Http\Livewire\Html;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Passwords\Confirm;
 use App\Http\Livewire\Auth\Passwords\Email;
 use App\Http\Livewire\Auth\Passwords\Reset;
 use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
+use App\Http\Livewire\ExploreKategori;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,7 +37,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/explore', [ExploreController::class, 'index'])->name('explore');
-    Route::get('/explore/html', Html::class)->name('html');
+    Route::get('/explore/{kategori}', ExploreKategori::class)->name('explore_kategori');
 
     Route::get('/practice', [PracticeController::class, 'index'])->name('practice');
     Route::get('/practice/{kategori}', [PracticeController::class, 'kategori'])->name('practice-kategori');
@@ -44,6 +45,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/practice_answer/{id}', [PracticeController::class, 'answer'])->name('practice_answer');
 
     Route::get('/leaderboards/', [LeaderboardController::class, 'index'])->name('leaderboard');
+    Route::get('/daily_quests/', [DailyQuestController::class, 'index'])->name('daily_quest');
+    Route::get('/daily_quests/question/{id}', [DailyQuestController::class, 'question'])->name('daily_quest_question');
+    Route::post('/daily_quests/answer/{id}', [DailyQuestController::class, 'answer'])->name('daily_quest_answer');
 });
 
 Route::middleware('guest')->group(function () {

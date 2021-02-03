@@ -51,7 +51,7 @@
                             class="flex flex-row items-center justify-between h-16 p-4 my-6 border border-gray-100 rounded-lg shadow-md">
                             <div class="flex items-center">
                                 <h1 class="mr-3 text-sm text-3xl font-bold text-green-500">{{ $i }} |</h1>
-                                <img class="w-12 h-12 rounded-full" src="https://ui-avatars.com/api/?name={{ Auth::user()->username }}" alt="user"/>
+                                <img class="w-12 h-12 rounded-full" src="https://ui-avatars.com/api/?name={{ $user->username }}" alt="user"/>
                                 <div class="ml-2">
                                     <div class="text-sm font-semibold text-gray-600">{{ $user->nama_siswa }}</div>
                                     <div class="text-sm font-light text-gray-500">{{ $user->username }}</div>

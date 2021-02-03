@@ -1,7 +1,7 @@
 <div>
     <x-navbar />
 
-    <div class="fixed bottom-0 left-0 px-6 py-4 mb-4 ml-2 text-white bg-pink-500 border-0 rounded">
+    {{-- <div class="fixed bottom-0 left-0 px-6 py-4 mb-4 ml-2 text-white bg-pink-500 border-0 rounded">
         <span class="inline-block mr-5 text-xl align-middle">
             <i class="fas fa-bell"></i>
         </span>
@@ -24,7 +24,7 @@
             element.parentNode.parentNode.removeChild(element.parentNode);
         }
 
-    </script>
+    </script> --}}
 
     <div class="flex flex-row w-full md:flex-row-reverse md:min-h-screen">
         <x-sidebar>
@@ -41,10 +41,10 @@
             <div class="container flex flex-col mt-5">
                 <div class="grid grid-cols-3 m-5">
                     <div class="col-span-2">
-                        <h1 class="pb-5 text-5xl font-bold">HTML</h1>
+                        <h1 class="pb-5 text-5xl font-bold uppercase">{{ $kategori }}</h1>
                         <div class="p-5 bg-gray-200">
-                            <h1 class="pb-5 text-3xl font-bold">{{ @$judul_materi ? $judul_materi : 'HTML' }}</h1>
-                            <p>{{ @$isi_materi ? $isi_materi : 'HTML bukanlah bahasa pemrograman, dan itu berarti HTML tidak punya kemampuan untuk membuat fungsionalitas yang dinamis. Sebagai gantinya, HTML memungkinkan user untuk mengorganisir dan memformat dokumen, sama seperti Microsoft Word.' }}
+                            <h1 class="pb-5 text-3xl font-bold">{{ @$judul_materi ? $judul_materi : 'Home' }}</h1>
+                            <p>{!! @$isi_materi ? $isi_materi : 'Halaman utama materi' !!}
                             </p>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         <div>
                             <ul>
                                 <li class="p-5 mb-2 bg-gray-200">
-                                    <a href="{{ url('/html') }}">Home</a>
+                                    <a href="{{ url('/explore/'.$kategori) }}">Home</a>
                                 </li>
                                 @foreach ($explores as $ex)
                                 <li class="p-5 mb-2 bg-gray-200">

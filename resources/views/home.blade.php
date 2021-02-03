@@ -18,6 +18,9 @@
             <a href="{{ url('/leaderboards') }}" class="w-32 px-4 py-2">
                 <img src="{{ asset('/assets/img/leaderboard.png') }}" alt="">
             </a>
+            <a href="{{ url('/daily_quests') }}" class="w-32 px-4 py-2">
+                <img src="{{ asset('/assets/img/quest.png') }}" alt="">
+            </a>
         </div>
         <div class="container flex flex-col m-auto">
             <div class="flex flex-row justify-center mb-5">

@@ -2,40 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Answer_Practice;
 use Illuminate\Http\Request;
-use App\Models\Practice;
+use App\Models\Daily_Quest;
+use App\Models\Answer_Daily_Quest;
 use App\Models\User;
+use Carbon\Carbon;
 use Auth;
 
-class PracticeController extends Controller
+class DailyQuestController extends Controller
 {
     public function index()
     {
+        $data_get = Daily_Quest::where('set_time', Carbon::today())->get();
+        $data_get2 = Answer_Daily_Quest::where('user_id', Auth::user()->id)->whereDate('time', Carbon::today())->count();
         $data = array(
-            'title' => 'Practice'
+            'daily_quests' => $data_get,
+            'count_answer' => $data_get2,
+            'title' => 'Daily Quest'
         );
-        return view('practice')->with($data);
-    }
-
-    public function kategori($kategori)
-    {
-        $data_get = Practice::where('kategori', $kategori)->get();
-        $data = array(
-            'practices' => $data_get,
-            'title' => 'Practice - '.$kategori
-        );
-        return view('practice_kategori')->with($data);
+        return view('daily_quest')->with($data);
     }
 
     public function question($question)
     {
-        $data_get = Practice::find($question);
+        $data_get = Daily_Quest::find($question);
         $data = array(
-            'practice' => $data_get,
-            'title' => 'Practice - '.$data_get->judul_practice
+            'daily_quest' => $data_get,
+            'title' => 'Daily Quest - '.$data_get->judul_daily_quest
         );
-        return view('practice_question')->with($data);
+        return view('daily_quest_question')->with($data);
     }
 
     public function answer(Request $request, $id)
@@ -47,19 +42,20 @@ class PracticeController extends Controller
         ]);
 
         $skor = 0;
-        $verify_answer = Practice::find($id);
+        $verify_answer = Daily_Quest::find($id);
         if ($verify_answer->jawaban == $request->input('answer')) {
             $skor = $verify_answer->skor_nilai;
-            Answer_Practice::create([
+            Answer_Daily_Quest::create([
                 'user_id' => Auth::user()->id,
-                'practice_id' => $id,
+                'daily_quest_id' => $id,
                 'jawaban_siswa' => $request->input('answer'),
-                'skor_nilai' => 10
+                'skor_nilai' => 10,
+                'time' => Carbon::now()
             ]);
             $data = [
-                'practice_skor' => $skor,
-                'practice_judul' => $verify_answer->judul_practice,
-                'practice_time' => $request->input('timer')
+                'daily_skor' => $skor,
+                'daily_judul' => $verify_answer->judul_daily_quest,
+                'daily_time' => $request->input('timer')
             ];
 
             $update_total = User::find(Auth::user()->id);

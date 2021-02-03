@@ -41,7 +41,7 @@
     </x-sidebar>
     <div class="flex flex-row w-full text-gray-700 bg-red-500 dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div class="flex flex-col">
-            <a href="{{ url('/practice/'.$practice->kategori) }}" class="w-24 px-4 py-2">
+            <a href="{{ url('/daily_quests') }}" class="w-24 px-4 py-2">
                 <img src="{{ asset('/assets/img/back.png') }}" alt="">
             </a>
         </div>
@@ -49,16 +49,16 @@
             <div class="flex flex-col">
                 <div>
                     <div class="flex flex-row justify-between">
-                        <h1 class="pb-5 text-5xl font-bold">{{ $practice->judul_practice }}</h1>
+                        <h1 class="pb-5 text-5xl font-bold">{{ $daily_quest->judul_daily_quest }}</h1>
                         <span id="timer" class="p-5 text-lg font-semibold text-white">00:00:00</span>
                     </div>
                     <div class="p-5 bg-gray-200">
-                        <p>{!! $practice->pertanyaan !!}
+                        <p>{!! $daily_quest->pertanyaan !!}
                         </p>
                     </div>
                 </div>
                 <div>
-                    <form method="POST" action="{{ route('practice_answer', $practice->id) }}">
+                    <form method="POST" action="{{ route('daily_quest_answer', $daily_quest->id) }}">
                         @csrf
                         <div class="flex flex-col bg-white border rounded shadow box">
                             <div class="px-3 py-2 border-b box__title bg-grey-lighter"><h3 class="text-sm font-medium text-grey-darker">Answer</h3></div>
