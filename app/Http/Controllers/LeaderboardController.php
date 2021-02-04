@@ -9,7 +9,7 @@ class LeaderboardController extends Controller
 {
     public function index()
     {
-        $data_get = User::all();
+        $data_get = User::orderBy('total_skor_nilai', 'desc')->get();
         $data = array(
             'users' => $data_get,
             'title' => 'Leaderboard'

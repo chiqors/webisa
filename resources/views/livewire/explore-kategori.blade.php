@@ -39,6 +39,11 @@
         </x-sidebar>
         <div class="flex flex-row w-full text-gray-700 bg-red-500 dark-mode:text-gray-200 dark-mode:bg-gray-800">
             <div class="container flex flex-col mt-5">
+                <div class="flex flex-col">
+                    <a href="{{ url('/explore') }}" class="w-24 px-4 py-2">
+                        <img src="{{ asset('/assets/img/back.png') }}" alt="">
+                    </a>
+                </div>
                 <div class="grid grid-cols-3 m-5">
                     <div class="col-span-2">
                         <h1 class="pb-5 text-5xl font-bold uppercase">{{ $kategori }}</h1>

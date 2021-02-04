@@ -34,9 +34,8 @@
             <img src="https://ui-avatars.com/api/?name={{ Auth::user()->username }}" />
         </x-slot>
         <x-slot name="points">
-            <span class="text-center text-black">{{ Auth::user()->nama_siswa }} ({{ Auth::user()->username }})
-            </span>
-            <span class="text-center text-black">Total Point: {{ Auth::user()->total_skor_nilai }}</span>
+            <span class="text-center text-black">{{ Auth::user()->nama_siswa }} ({{ Auth::user()->username }}) </span>
+            <span class="text-center text-black">Total Point: <span class="font-bold">{{ Auth::user()->total_skor_nilai }} pts</span></span>
         </x-slot>
     </x-sidebar>
     <div class="flex flex-row w-full text-gray-700 bg-red-500 dark-mode:text-gray-200 dark-mode:bg-gray-800">

@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 use App\Models\Daily_Quest;
@@ -72,11 +71,124 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('juned'),
         ]]);
         Practice::insert([[
-            'judul_practice' => 'Latihan Font',
-            'pertanyaan' => 'Buatlah kata "Aku tidak <b>Menyerah</b> <i>terhadap</i> Makanan <u>Favorit</u>" dalam bentuk format HTML!',
-            'jawaban' => 'Aku tidak <b>Menyerah</b> <i>terhadap</i> Makanan <u>Favorit</u>',
+            'judul_practice' => 'Dasar HTML',
+            'pertanyaan' => 'HTML merupakan singkatan dari ?',
+            'jawaban' => 'Hyper Text Markup Language',
             'skor_nilai' => 10,
             'kategori' => 'html'
+        ],[
+            'judul_practice' => 'Dasar HTML',
+            'pertanyaan' => 'Untuk membuat listing tag pertama adalah ?',
+            'jawaban' => '<ul>',
+            'skor_nilai' => 10,
+            'kategori' => 'html'
+        ],[
+            'judul_practice' => 'Dasar HTML',
+            'pertanyaan' => 'Bahasa Pemrograman yang biasa digunakan untuk membuat halaman web adalah pengertian dari ?',
+            'jawaban' => 'Html',
+            'skor_nilai' => 10,
+            'kategori' => 'html'
+        ],[
+            'judul_practice' => 'Pemahaman dasar Membuat table di HTML',
+            'pertanyaan' => 'Fungsi atribut "align" dalam HTML adalah ?',
+            'jawaban' => 'Perataan table',
+            'skor_nilai' => 10,
+            'kategori' => 'html'
+        ],
+        [
+            'judul_practice' => 'Pemahaman dasar membuat table di html',
+            'pertanyaan' => 'Untuk menentukan baris dalam table adalah',
+            'jawaban' => '<tr>',
+            'skor_nilai' => 10,
+            'kategori' => 'html'
+        ],[
+            'judul_practice' => 'Pemahaman dasar Membuat table di HTML',
+            'pertanyaan' => 'Untuk membuat tabel biasanya menggunakan tag',
+            'jawaban' => '<table>',
+            'skor_nilai' => 10,
+            'kategori' => 'html'
+        ],[
+            'judul_practice' => 'Latihan membuat table di HTML',
+            'pertanyaan' => 'Tag table adalah ?',
+            'jawaban' => '-<table> ... </table>',
+            'skor_nilai' => 10,
+            'kategori' => 'html'
+        ],[
+            'judul_practice' => 'Latihan membuat table di HTML',
+            'pertanyaan' => 'Struktur dasar untuk membuat tabel pada HTML adalah ?',
+            'jawaban' => '<table>
+                       <tr>
+                       <td> </td>
+                       </tr>
+                       <table>',
+            'skor_nilai' => 10,
+            'kategori' => 'html'
+        ],[
+            'judul_practice' => 'Pengenalan CSS',
+            'pertanyaan' => 'Apa Kepanjangan Dari CSS ?',
+            'jawaban' => 'Cascading Style Sheets',
+            'skor_nilai' => 10,
+            'kategori' => 'css'
+        ],[
+            'judul_practice' => 'Pengenalan CSS',
+            'pertanyaan' => 'File CSS memiliki ekstensi file ?',
+            'jawaban' => '.css',
+            'skor_nilai' => 10,
+            'kategori' => 'css'
+        ],[
+            'judul_practice' => 'Pengenalan CSS',
+            'pertanyaan' => 'Apa Fungsi Dari Penggunaan Kode Pemrograman CSS ?',
+            'jawaban' => 'Fungsinya yaitu untuk menghias dan mengatur gaya layout/tampilan suatu halaman web agar terlihat menarik',
+            'skor_nilai' => 10,
+            'kategori' => 'css'
+        ],[
+            'judul_practice' => 'Pengenalan CSS',
+            'pertanyaan' => 'Apa Saja Properti Yang Ada Pada Margin CSS ?',
+            'jawaban' => 'margin-top, margin-right, margin-bottom dan margin-left',
+            'skor_nilai' => 10,
+            'kategori' => 'css'
+        ],[
+            'judul_practice' => 'Pengenalan CSS',
+            'pertanyaan' => 'Apa Saja Properti Yang Ada Pada Background CSS ?',
+            'jawaban' => 'background-color, background-image, background-repeat, background-attachment dan background-position',
+            'skor_nilai' => 10,
+            'kategori' => 'css'
+        ],[
+            'judul_practice' => 'Latihan Menampilkan di CSS',
+            'pertanyaan' => 'tuliskan sintak css untuk menampilkan "My First CSS Example" menggunakan echo !',
+            'jawaban' => 'echo "My First CSS Example";',
+            'skor_nilai' => 10,
+            'kategori' => 'css'
+        ],[
+            'judul_practice' => 'Jenis-Jenis selektor di CSS',
+            'pertanyaan' => 'Dapat Berupa Apa Sajakah selektor yang terdapat di CSS ?',
+            'jawaban' => 'Selektor dapat berupa nama tag, class, id, atribut dan universal.',
+            'skor_nilai' => 10,
+            'kategori' => 'css'
+        ],[
+            'judul_practice' => 'Pengenalan Selektor Pada CSS',
+            'pertanyaan' => 'Apa Yang Dimaksud Dengan Selektor Pada CSS ?',
+            'jawaban' => 'Selektor adalah kata kunci untuk memilih elemen HTML yang akan kita atur',
+            'skor_nilai' => 10,
+            'kategori' => 'css'
+        ],[
+            'judul_practice' => 'Pengenalan Blok Deklarasi Pada CSS',
+            'pertanyaan' => 'Apa Yang Dimaksud Dengan Blok Deklarasi ?',
+            'jawaban' => 'Blok deklarasi adalah tempat kita menuliskan atribut-atibut CSS yang akan diberikan kepada selektor',
+            'skor_nilai' => 10,
+            'kategori' => 'css'
+        ],[
+            'judul_practice' => 'Struktur Kode Dasar CSS',
+            'pertanyaan' => 'Apa Saja Yang Terdiri Dari Struktur Dasar CSS ?',
+            'jawaban' => 'Selektor, Blok Deklarasi dan Properti beserta nilainya',
+            'skor_nilai' => 10,
+            'kategori' => 'css'
+        ],[
+            'judul_practice' => 'Macam-Macam CSS',
+            'pertanyaan' => 'Apa Saja Macam-Macam CSS Yang Sering Digunakan ?',
+            'jawaban' => 'Inline Style Sheet, External Style Sheet dan Embedded Style Sheet',
+            'skor_nilai' => 10,
+            'kategori' => 'css'
         ],[
             'judul_practice' => 'Pengenalan php',
             'pertanyaan' => 'Apa Kepanjangan Dari PHP ?',
@@ -153,9 +265,72 @@ class DatabaseSeeder extends Seeder
         ]]);
         Explore::insert([
         [
+            'judul_materi' => 'Pemahaman Dasar HTML',
+            'isi_materi' => '<p style="text-align:center"><strong>PEMAHAMAN DASAR HTML</strong></p>
+
+            <p>Apa itu HTML?<br />
+            - HTML adalah Hypertext Markup Language<br />
+            - HTML merupakan bahasa mark up yang mudah untuk dipahami oleh pengguna.<br />
+            - HTML dapat memudahkan user pemula ataupun developer dalam memformat, menyusun, serta mengorganisir suatu dokumen secara online menggunakan program Microsoft Word.<br />
+            - HTML berfungsi untuk memudahkan pengguna saat mengelola atau mengatur sebuah data dalam bentuk dokumen pada website</p>
+
+            <p>Apa Yang Dapat Dilakukan HTML?<br />
+            - Membuat halaman web<br />
+            - Menampilkan berbagai informasi di dalam sebuah browser Internet<br />
+            - Membuat link menuju halaman web lain dengan kode tertentu (hypertext)</p>
+
+            <p>Mengapa kalian harus belajar HTML?<br />
+            - Komunikasi bisnis yang lebih baik<br />
+            - Melakukan update oleh kita sendiri<br />
+            - Mempermudah web design<br />
+            - Blogging menjadi lebih baik<br />
+            - Meng-update diri kita</p>',
+            'kategori' => 'html'
+        ],[
             'judul_materi' => 'Font',
             'isi_materi' => 'Font adalah desain grafis yang diterapkan ke kumpulan angka, simbol, dan karakter. Font adalah kombinasi dari jenis huruf dan kualitas lainnya, seperti ukuran, tebal, dan jarak. Misalnya, Times Roman adalah jenis huruf yang menentukan bentuk setiap karakter. Pada Times Roman, ada banyak font untuk dipilih – ukuran yang berbeda, miring, tebal, dan sebagainya. (Istilah font sering digunakan secara tidak benar sebagai sinonim untuk jenis huruf.)',
             'kategori' => 'html'
+        ],[
+            'judul_materi' => 'Pemahaman Dasar CSS',
+            'isi_materi' => '<p style="text-align:center"><strong>PEMAHAMAN DASAR CSS</strong></p>
+
+            <p>Apa itu CSS?<br />
+            -CSS singkatan dari Cascading Style Sheets.<br />
+            -Secara bahasa berarti lembaran gaya yang mengalir ke bawah.<br />
+            -Secara istilah, CSS adalah bahasa penulisan yang digunakan untuk mendeskripsikan penampilan sebuah dokumen markup.<br />
+            -Dengan CSS, kita dapat mengatur layout (tata letak), warna, font, garis, dan lain-lain.<br />
+            -CSS selalu digunakan bersamaan dengan HTML, meskipun kita dapat juga menggunakannya untuk mengatur style dokumen markup lain seperti XML, SVG dan XUL.</p>
+
+            <p>Apa Saja Struktur Kode Dasar Dari CSS?<br />
+            -Struktur Kode Dasar Dari CSS Terdiri Dari Tiga Bagian, Yaitu :<br /><br />
+            -1. Selektor<br />
+            -2. Blok Deklarasi<br />
+            -3. Properti dan Nilainya</p>
+
+            <p>Penjelasan Struktur Kode Dasar Dari CSS <br />
+            -1. Selektor, Selektor adalah kata kunci untuk memilih elemen HTML yang akan kita atur.<br />
+            -Selektor dapat berupa nama tag, class, id, atribut dan universal.<br />
+            ->> Selektor Tag disebut juga Type Selector. Selektor ini akan memilih elemen berdasarkan nama tag.<br />
+            ->> Selektor Class adalah selektor yang memilih elemen berdasarkan nama class yang diberikan. Selektor class dibuat dengan tanda titik di depannya.<br />
+            ->> Selektor ID hampir sama dengan class. Bedanya, ID bersifat unik. Hanya boleh digunakan oleh satu elemen saja.<br />
+            -Selektor ID ditandai dengan tanda pagar "#" di depannya.<br />
+            ->> Selektor Atribut adalah selektor yang memilik elemen berdasarkan atribut. Selektor ini hampir sama seperti selektor Tag.<br />
+            ->> Selektor Universal adalah selektor yang digunakan untuk menyeleksi semua elemen pada jangkauan (scope) tertentu.<br />
+            -Selektor universal biasanya digunakan untuk me-reset CSS.<br />
+            -2. Blok Deklarasi, Blok Deklarasi adalah tempat kita menuliskan atribut-atibut CSS yang akan diberikan kepada selektor.<br />
+            -Blok Deklarasi dimulai atau dibuka dengan tanda kurung "{" lalu ditutup dengan tanda kurung "}".<br />
+            -3. Properti dan Nilai, Properti merupakan atribut atau sekumpulan aturan yang akan diberikan kepada elemen yang dipilih.<br />
+            -Setiap properti harus diakhiri dengan titik koma ";". Apabila hanya terdapat satu properti, boleh tidak menggunakan titik koma.<br />
+            -Properti harus ditulis di dalam blok deklarasi.</p>
+
+            <p>Macam-Macam CSS <br />
+            -1. Inline Style Sheet, CSS model ini adalah CSS dengan perintah pemrograman yang letaknya ada pada objek.
+            -Misalnya kamu ingin mengubah sebuah tulisan pada laman tertentu di website milikmu, inline style sheet CSS harus menempel pada elemen tulisan tersebut. Kamu cukup menambahkan tag <style> saja untuk menerapkan CSS ini.<br />
+            -2. External Style Sheet, CSS ini letaknya berbeda dengan laman yang akan diubah. Cara ini lebih praktis daripada inline style sheet karena bisa menghemat ruang dan bisa digunakan berulang-ulang untuk laman web yang berbeda.<br />
+            -bisa mengenali CSS tipe ini lewat tag <link rel>. Tag ini akan menghubungkan halaman coding pada external style sheet CSS yang terpisah.<br />
+            -3. CSS model ini sama seperti inline style sheet, sama-sama berada pada satu laman coding. Maka tidak mengherankan jika embedded style sheet terkadang disebut dengan internal style sheet. Biasanya CSS ini diapit oleh tag <head> </head> dan diawali dengan tag <style>.<br />
+            -Embedded style sheet sering digunakan untuk mengatur laman web dengan tampilan yang unik. Misalnya dalam satu paragraf tulisan ada kalimat yang berbeda dan hal tersebut terus berulang.<br />',
+            'kategori' => 'css'
         ],[
             'judul_materi' => 'PENGENALAN PHP',
             'isi_materi' => '<p style="text-align:center"><strong>PENGENALAN PHP</strong></p>
