@@ -25,7 +25,7 @@
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     HTML
                 </a>
-                @if(Auth::user()->total_skor_nilai > 100)
+                @if(Auth::user()->total_skor_nilai >= 100)
                 <a href="{{ url('/explore/css') }}" onclick="soundClick();"
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     CSS
@@ -38,7 +38,7 @@
                 @endif
             </div>
             <div class="flex flex-row justify-center mb-5">
-                @if(Auth::user()->total_skor_nilai > 200)
+                @if(Auth::user()->total_skor_nilai >= 200)
                 <a href="{{ url('/explore/js') }}" onclick="soundClick();"
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     JS
@@ -49,7 +49,7 @@
                     JS
                 </a>
                 @endif
-                @if(Auth::user()->total_skor_nilai > 300)
+                @if(Auth::user()->total_skor_nilai >= 300)
                 <a href="{{ url('/explore/php') }}" onclick="soundClick();"
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     PHP

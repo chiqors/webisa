@@ -40,6 +40,7 @@
 </div>
 
 <input id="practiceInput" type="hidden" value="{{ session()->get('practice_judul') ? session()->get('practice_judul') : "" }}" />
+<input id="dailyInput" type="hidden" value="{{ session()->get('daily_judul') ? session()->get('daily_judul') : "" }}" />
 
 <dialog id="practiceModal" class="relative z-0 w-screen h-screen bg-transparent">
     <div class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full transition-opacity duration-300 bg-gray-900 bg-opacity-50 opacity-0 p-7">
@@ -59,7 +60,31 @@
                 </div>
                 <div class="flex w-3/4">
                     <!-- End Regular with text version -->
-                    <button class="w-full py-3 my-8 text-lg text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl" onclick="closeModal('practiceModal')">Close</button>
+                    <button class="w-full py-3 my-8 text-lg text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl" onclick="document.getElementById('practiceModal').style.display='none'">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</dialog>
+<dialog id="dailyModal" class="relative z-0 w-screen h-screen bg-transparent">
+    <div class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full transition-opacity duration-300 bg-gray-900 bg-opacity-50 opacity-0 p-7">
+        <div class="flex flex-col bg-white shadow-lg min-w-1xl rounded-xl">
+            <div class="px-12 py-5">
+                <h2 class="text-3xl font-semibold text-gray-800">Congratulations!</h2>
+            </div>
+            <div class="flex flex-col items-center w-full bg-gray-200">
+                <div class="flex flex-col items-center py-6 space-y-3">
+                    <span class="text-lg text-gray-800">You have earned score</span>
+                    <div class="flex flex-col items-center justify-center space-x-3">
+                        <h1 class="text-3xl font-bold">{{ session()->get('daily_skor') }} pts</h1>
+                        <p class="mt-2 text-lg">Time: <span class="font-bold">{{ session()->get('daily_time') }}</span></p>
+                        <p class="mt-1 text-lg">QUEST</p>
+                        <p class="text-lg"><span class="font-bold">{{ session()->get('daily_judul') }}</span></p>
+                    </div>
+                </div>
+                <div class="flex w-3/4">
+                    <!-- End Regular with text version -->
+                    <button class="w-full py-3 my-8 text-lg text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl" onclick="document.getElementById('practiceModal').style.display='none'">Close</button>
                 </div>
             </div>
         </div>
@@ -67,13 +92,14 @@
 </dialog>
 <script>
     var practiceCheck = document.getElementById('practiceInput').value;
+    var dailyCheck = document.getElementById('dailyInput').value;
     if(practiceCheck != "") {
         completedSound();
         openModal('practiceModal');
     }
-    if(questCheck != "") {
+    if(dailyCheck != "") {
         completedSound();
-        openModal('practiceModal');
+        openModal('dailyModal');
     }
     function openModal(key) {
         document.getElementById(key).showModal();

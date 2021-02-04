@@ -64,7 +64,10 @@ class DailyQuestController extends Controller
             $update_total->timestamps = false;
             $update_total->save();
 
-            return redirect(route('home'))->with($data);
+            return redirect(route('home'))
+            ->with('daily_skor', $skor)
+            ->with('daily_judul', $verify_answer->judul_daily_quest)
+            ->with('daily_time', $request->input('timer'));
         } else {
             dd("masih salah");
         }
