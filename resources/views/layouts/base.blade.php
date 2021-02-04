@@ -23,10 +23,10 @@
         <!-- Scripts -->
         <script src="{{ url(mix('js/app.js')) }}" defer></script>
         <!-- Background Sound -->
-        <audio id="back_audio" src="{{ asset('assets/audio/background.aac') }}" preload="none" loop="true" autobuffer>
+        <audio id="back_audio" src="{{ asset('assets/audio/background.aac') }}" preload="none" loop="true" autobuffer></audio>
+        <audio id="congratsSound" src="{{ asset('assets/audio/completed.aac') }}"></audio>
         <!-- Misc Sound -->
         <audio id="clickSound" src="{{ asset('assets/audio/click.mp3') }}"></audio>
-        </audio>
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">

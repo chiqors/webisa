@@ -84,7 +84,7 @@ class DatabaseSeeder extends Seeder
             'kategori' => 'html'
         ],[
             'judul_practice' => 'Dasar HTML',
-            'pertanyaan' => 'Bahasa Pemrograman yang biasa digunakan untuk membuat halaman web adalah pengertian dari ?',
+            'pertanyaan' => 'Bahasa Struktur yang biasa digunakan untuk membuat halaman web adalah pengertian dari ?',
             'jawaban' => 'Html',
             'skor_nilai' => 10,
             'kategori' => 'html'
@@ -110,17 +110,13 @@ class DatabaseSeeder extends Seeder
         ],[
             'judul_practice' => 'Latihan membuat table di HTML',
             'pertanyaan' => 'Tag table adalah ?',
-            'jawaban' => '-<table> ... </table>',
+            'jawaban' => '<table>',
             'skor_nilai' => 10,
             'kategori' => 'html'
         ],[
             'judul_practice' => 'Latihan membuat table di HTML',
             'pertanyaan' => 'Struktur dasar untuk membuat tabel pada HTML adalah ?',
-            'jawaban' => '<table>
-                       <tr>
-                       <td> </td>
-                       </tr>
-                       <table>',
+            'jawaban' => '<table><tr><td></td></tr><table>',
             'skor_nilai' => 10,
             'kategori' => 'html'
         ],[
@@ -287,8 +283,88 @@ class DatabaseSeeder extends Seeder
             - Meng-update diri kita</p>',
             'kategori' => 'html'
         ],[
-            'judul_materi' => 'Font',
-            'isi_materi' => 'Font adalah desain grafis yang diterapkan ke kumpulan angka, simbol, dan karakter. Font adalah kombinasi dari jenis huruf dan kualitas lainnya, seperti ukuran, tebal, dan jarak. Misalnya, Times Roman adalah jenis huruf yang menentukan bentuk setiap karakter. Pada Times Roman, ada banyak font untuk dipilih – ukuran yang berbeda, miring, tebal, dan sebagainya. (Istilah font sering digunakan secara tidak benar sebagai sinonim untuk jenis huruf.)',
+            'judul_materi' => 'Pemahaman Dasar HTML',
+            'isi_materi' => '<p style="text-align:center"><strong>PEMAHAMAN DASAR HTML</strong></p>
+
+            <p>Apa itu HTML?<br />
+            - HTML adalah Hypertext Markup Language<br />
+            - HTML merupakan bahasa mark up yang mudah untuk dipahami oleh pengguna.<br />
+            - HTML dapat memudahkan user pemula ataupun developer dalam memformat, menyusun, serta mengorganisir suatu dokumen secara online menggunakan program Microsoft Word.<br />
+            - HTML berfungsi untuk memudahkan pengguna saat mengelola atau mengatur sebuah data dalam bentuk dokumen pada website</p>
+
+            <p>Apa Yang Dapat Dilakukan HTML?<br />
+            - Membuat halaman web<br />
+            - Menampilkan berbagai informasi di dalam sebuah browser Internet<br />
+            - Membuat link menuju halaman web lain dengan kode tertentu (hypertext)</p>
+
+            <p>Mengapa kalian harus belajar HTML?<br />
+            - Komunikasi bisnis yang lebih baik<br />
+            - Melakukan update oleh kita sendiri<br />
+            - Mempermudah web design<br />
+            - Blogging menjadi lebih baik<br />
+            - Meng-update diri kita</p>',
+            'kategori' => 'html'
+        ],[
+            'judul_materi' => 'Tabel HTML',
+            'isi_materi' => '<p>Tentukan Tabel HTML<br />
+            The &lt;table&gt;tag mendefinisikan sebuah tabel HTML.</p>
+
+            <p>Setiap baris tabel ditentukan dengan &lt;tr&gt;tag. Setiap tajuk tabel ditentukan dengan &lt;th&gt;tag. Setiap tabel data / sel didefinisikan dengan &lt;td&gt;tag.</p>
+
+            <p>Secara default, teks dalam &lt;th&gt;elemen dicetak tebal dan di tengah.</p>
+
+            <p>Secara default, teks dalam &lt;td&gt;elemen beraturan dan rata kiri.</p>
+
+            <p>Contoh<br />
+            Tabel HTML sederhana:</p>
+
+            <p>&lt;table style=&quot;width:100%&quot;&gt;<br />
+            &nbsp; &lt;tr&gt;<br />
+            &nbsp; &nbsp; &lt;th&gt;Firstname&lt;/th&gt;<br />
+            &nbsp; &nbsp; &lt;th&gt;Lastname&lt;/th&gt;<br />
+            &nbsp; &nbsp; &lt;th&gt;Age&lt;/th&gt;<br />
+            &nbsp; &lt;/tr&gt;<br />
+            &nbsp; &lt;tr&gt;<br />
+            &nbsp; &nbsp; &lt;td&gt;Jill&lt;/td&gt;<br />
+            &nbsp; &nbsp; &lt;td&gt;Smith&lt;/td&gt;<br />
+            &nbsp; &nbsp; &lt;td&gt;50&lt;/td&gt;<br />
+            &nbsp; &lt;/tr&gt;<br />
+            &nbsp; &lt;tr&gt;<br />
+            &nbsp; &nbsp; &lt;td&gt;Eve&lt;/td&gt;<br />
+            &nbsp; &nbsp; &lt;td&gt;Jackson&lt;/td&gt;<br />
+            &nbsp; &nbsp; &lt;td&gt;94&lt;/td&gt;<br />
+            &nbsp; &lt;/tr&gt;<br />
+            &lt;/table&gt;</p>
+            ',
+            'kategori' => 'html'
+        ],[
+            'judul_materi' => 'FORM HTML',
+            'isi_materi' => '<p>Formulir HTML digunakan untuk mengumpulkan masukan pengguna. Masukan pengguna paling sering dikirim ke server untuk diproses.<br />
+            Elemen &lt;form&gt;<br />
+            &lt;form&gt;Elemen HTML digunakan untuk membuat formulir HTML untuk input pengguna:</p>
+
+            <p>&lt;form&gt;<br />
+            .<br />
+            form elements<br />
+            .<br />
+            &lt;/form&gt;<br />
+            The &lt;form&gt;unsur adalah wadah untuk berbagai jenis elemen input, seperti: bidang teks, checkbox, tombol radio, tombol submit, dll</p>
+
+            <p>Semua elemen formulir yang berbeda dibahas dalam bab ini: Elemen Formulir HTML .<br />
+            Elemen &lt;input&gt;<br />
+            &lt;input&gt;Elemen HTML adalah elemen formulir yang paling banyak digunakan.</p>
+
+            <p>Sebuah &lt;input&gt;elemen dapat ditampilkan dengan berbagai cara, bergantung pada type atributnya.</p>
+
+            <p>Berikut beberapa contohnya:</p>
+
+            <p>Tipe&nbsp;&nbsp; &nbsp;Deskripsi<br />
+            &lt;input type = &quot;text&quot;&gt;&nbsp;&nbsp; &nbsp;Menampilkan bidang input teks satu baris<br />
+            &lt;input type = &quot;radio&quot;&gt;&nbsp;&nbsp; &nbsp;Menampilkan tombol radio (untuk memilih salah satu dari banyak pilihan)<br />
+            &lt;input type = &quot;checkbox&quot;&gt;&nbsp;&nbsp; &nbsp;Menampilkan kotak centang (untuk memilih nol atau lebih dari banyak pilihan)<br />
+            &lt;input type = &quot;submit&quot;&gt;&nbsp;&nbsp; &nbsp;Menampilkan tombol kirim (untuk mengirimkan formulir)<br />
+            &lt;input type = &quot;button&quot;&gt;&nbsp;&nbsp; &nbsp;Menampilkan tombol yang dapat diklik</p>
+            ',
             'kategori' => 'html'
         ],[
             'judul_materi' => 'Pemahaman Dasar CSS',

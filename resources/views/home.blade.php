@@ -39,7 +39,8 @@
     </div>
 </div>
 
-@if(@$practice_judul)
+<input id="practiceInput" type="hidden" value="{{ session()->get('practice_judul') ? session()->get('practice_judul') : "" }}" />
+
 <dialog id="practiceModal" class="relative z-0 w-screen h-screen bg-transparent">
     <div class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full transition-opacity duration-300 bg-gray-900 bg-opacity-50 opacity-0 p-7">
         <div class="flex flex-col bg-white shadow-lg min-w-1xl rounded-xl">
@@ -49,36 +50,31 @@
             <div class="flex flex-col items-center w-full bg-gray-200">
                 <div class="flex flex-col items-center py-6 space-y-3">
                     <span class="text-lg text-gray-800">You have earned score</span>
-                    <div class="flex space-x-3">
-                        <h1 class="text-2xl">{{ @$practice_score }}</h1>
-                        <p class="text-lg">Time: <span class="font-bold">{{ @$practice_time }}</span></p>
+                    <div class="flex flex-col items-center justify-center space-x-3">
+                        <h1 class="text-3xl font-bold">{{ session()->get('practice_skor') }} pts</h1>
+                        <p class="mt-2 text-lg">Time: <span class="font-bold">{{ session()->get('practice_time') }}</span></p>
+                        <p class="mt-1 text-lg">PRACTICE</p>
+                        <p class="text-lg"><span class="font-bold">{{ session()->get('practice_judul') }}</span></p>
                     </div>
                 </div>
-                <div class="flex flex-col w-3/4">
-                    <!-- Start Regular with text version -->
-                    <div
-                        class="h-6 mt-5 bg-gray-200 rounded"
-                        role="progressbar"
-                        :aria-valuenow="width"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                        >
-                        <div
-                            class="h-6 text-sm text-center text-white transition bg-green-400 rounded"
-                            :style="`width: ${width}%; transition: width 2s;`"
-                            x-text="`${width}%`"
-                            >
-                        </div>
-                    </div>
+                <div class="flex w-3/4">
                     <!-- End Regular with text version -->
-                    <button class="py-3 my-8 text-lg text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl" onclick="closeModal('practiceModal')">Close</button>
+                    <button class="w-full py-3 my-8 text-lg text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl" onclick="closeModal('practiceModal')">Close</button>
                 </div>
             </div>
         </div>
     </div>
 </dialog>
 <script>
-    openModal('practiceModal');
+    var practiceCheck = document.getElementById('practiceInput').value;
+    if(practiceCheck != "") {
+        completedSound();
+        openModal('practiceModal');
+    }
+    if(questCheck != "") {
+        completedSound();
+        openModal('practiceModal');
+    }
     function openModal(key) {
         document.getElementById(key).showModal();
         document.body.setAttribute('style', 'overflow: hidden;');
@@ -95,6 +91,10 @@
             document.body.removeAttribute('style');
         }, 100);
     }
+
+    function completedSound() {
+        var sound = document.getElementById("congratsSound");
+        sound.play();
+    }
 </script>
-@endif
 @endsection

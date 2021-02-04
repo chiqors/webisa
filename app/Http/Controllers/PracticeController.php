@@ -56,11 +56,6 @@ class PracticeController extends Controller
                 'jawaban_siswa' => $request->input('answer'),
                 'skor_nilai' => 10
             ]);
-            $data = [
-                'practice_skor' => $skor,
-                'practice_judul' => $verify_answer->judul_practice,
-                'practice_time' => $request->input('timer')
-            ];
 
             $update_total = User::find(Auth::user()->id);
             $update_total->total_skor_nilai = $update_total->total_skor_nilai + $skor;
@@ -68,7 +63,10 @@ class PracticeController extends Controller
             $update_total->timestamps = false;
             $update_total->save();
 
-            return redirect(route('home'))->with($data);
+            return redirect(route('home'))
+            ->with('practice_skor', $skor)
+            ->with('practice_judul', $verify_answer->judul_practice)
+            ->with('practice_time', $request->input('timer'));
         } else {
             dd("masih salah");
         }
