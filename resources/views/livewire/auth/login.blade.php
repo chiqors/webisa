@@ -41,7 +41,7 @@
                         <input wire:model.lazy="password" id="password" type="password" required class="w-full py-2 text-lg border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Enter your password">
                     </div>
                     <div class="mt-10">
-                        <button type="submit" class="w-full p-4 font-semibold tracking-wide text-gray-100 bg-indigo-500 rounded-full shadow-lg font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600">
+                        <button onclick="soundClick();" type="submit" class="w-full p-4 font-semibold tracking-wide text-gray-100 bg-indigo-500 rounded-full shadow-lg font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600">
                             Log In
                         </button>
                     </div>

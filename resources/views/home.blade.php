@@ -15,22 +15,22 @@
     </x-sidebar>
     <div class="flex flex-row w-full text-gray-700 dark-mode:text-gray-200 dark-mode:bg-gray-800" style="background: url({{ asset('assets/img/map.jpg') }}); background-repeat: no-repeat; background-position: center; background-size: cover;">
         <div class="flex flex-col">
-            <a href="{{ url('/leaderboards') }}" class="w-32 px-4 py-2">
+            <a href="{{ url('/leaderboards') }}" class="w-32 px-4 py-2" onclick="soundClick();">
                 <img src="{{ asset('/assets/img/leaderboard.png') }}" alt="">
             </a>
-            <a href="{{ url('/daily_quests') }}" class="w-32 px-4 py-2">
+            <a href="{{ url('/daily_quests') }}" class="w-32 px-4 py-2" onclick="soundClick();">
                 <img src="{{ asset('/assets/img/quest.png') }}" alt="">
             </a>
         </div>
         <div class="container flex flex-col m-auto">
             <div class="flex flex-row justify-center mb-5">
-                <a href="{{ url('/explore') }}" onclick="playSound();"
+                <a href="{{ url('/explore') }}" onclick="soundClick();"
                     class="w-64 px-4 py-2 text-3xl font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     Explore
                 </a>
             </div>
             <div class="flex flex-row justify-center mb-5">
-                <a href="{{ url('/practice') }}"
+                <a href="{{ url('/practice') }}" onclick="soundClick();"
                     class="w-64 px-4 py-2 text-3xl font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     Practice
                 </a>

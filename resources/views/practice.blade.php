@@ -15,30 +15,51 @@
     </x-sidebar>
     <div class="flex flex-row w-full text-gray-700 bg-red-500 dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div class="flex flex-col">
-            <a href="{{ url('/') }}" class="w-24 px-4 py-2">
+            <a href="{{ url('/') }}" class="w-24 px-4 py-2" onclick="soundClick();">
                 <img src="{{ asset('/assets/img/back.png') }}" alt="">
             </a>
         </div>
         <div class="container flex flex-col m-auto">
             <div class="flex flex-row justify-center mb-5">
-                <a href="{{ url('practice/html') }}"
+                <a href="{{ url('/practice/html') }}" onclick="soundClick();"
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     HTML
                 </a>
-                <a href="{{ url('practice/css') }}"
+                @if(Auth::user()->total_skor_nilai > 100)
+                <a href="{{ url('/practice/css') }}" onclick="soundClick();"
+                    class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
+                    CSS
+                </a>
+                @else
+                <a
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-900 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     CSS
                 </a>
+                @endif
             </div>
             <div class="flex flex-row justify-center mb-5">
-                <a href="{{ url('practice/js') }}"
+                @if(Auth::user()->total_skor_nilai > 200)
+                <a href="{{ url('/practice/js') }}" onclick="soundClick();"
+                    class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
+                    JS
+                </a>
+                @else
+                <a
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-900 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     JS
                 </a>
-                <a href="{{ url('practice/php') }}"
+                @endif
+                @if(Auth::user()->total_skor_nilai > 300)
+                <a href="{{ url('/practice/php') }}" onclick="soundClick();"
+                    class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
+                    PHP
+                </a>
+                @else
+                <a
                     class="w-32 px-4 py-2 mx-2 text-3xl font-bold text-center text-white bg-blue-900 border-b-4 border-blue-900 rounded hover:border-b-2 hover:border-t-2 hover:border-blue">
                     PHP
                 </a>
+                @endif
             </div>
         </div>
     </div>

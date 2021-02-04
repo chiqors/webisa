@@ -15,7 +15,7 @@
     </x-sidebar>
     <div class="flex flex-row w-full text-gray-700 bg-red-500 dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div class="container flex flex-col m-auto">
-            <div class="flex flex-row justify-center mb-5">
+            <div class="flex flex-row justify-center my-5">
                 <div class="w-full bg-white rounded-lg shadow md:max-w-4xl">
                     <div class="flex items-center justify-between h-12 m-4 border-b border-gray-200">
                         <div>
@@ -28,7 +28,7 @@
                                     <div class="flex items-center">
                                         <div
                                             class="absolute flex items-center justify-center w-10 h-10 bg-white bg-red-400 rounded-full shadow toggle__dot">
-                                            <a class="w-6 h-6 text-white" href="{{ url('/') }}">
+                                            <a onclick="soundClick();" class="w-6 h-6 text-white" href="{{ url('/') }}">
                                                 <svg fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -42,30 +42,38 @@
                             </div>
                         </div>
                     </div>
-                    @php
+                    <div>
+                        @php
                         $i = 1;
-                    @endphp
-                    @foreach($users as $user)
-                    <div class="px-6">
-                        <div
-                            class="flex flex-row items-center justify-between h-16 p-4 my-6 border border-gray-100 rounded-lg shadow-md">
-                            <div class="flex items-center">
-                                <h1 class="mr-3 text-sm text-3xl font-bold text-green-500">{{ $i }} |</h1>
-                                <img class="w-12 h-12 rounded-full" src="https://ui-avatars.com/api/?name={{ $user->username }}" alt="user"/>
-                                <div class="ml-2">
-                                    <div class="text-sm font-semibold text-gray-600">{{ $user->nama_siswa }}</div>
-                                    <div class="text-sm font-light text-gray-500">{{ $user->username }}</div>
+                        @endphp
+                        @foreach($users as $user)
+                        @if($i == 4)
+                        <div class="grid grid-cols-2">
+                        @endif
+                            <div class="px-6">
+                                <div
+                                    class="flex flex-row items-center justify-between h-16 p-4 my-6 border border-gray-100 rounded-lg shadow-md">
+                                    <div class="flex items-center">
+                                        <h1 class="mr-3 text-sm text-3xl font-bold {{ $i==1 ? 'text-yellow-500' : ($i==2 ? 'text-gray-500' : ($i==3 ? 'text-yellow-900' : 'text-red-400')) }}">{{ $i }} |</h1>
+                                        <img class="w-12 h-12 rounded-full" src="https://ui-avatars.com/api/?name={{ $user->username }}" alt="user"/>
+                                        <div class="ml-2">
+                                            <div class="text-sm font-semibold text-gray-600">{{ $user->nama_siswa }}</div>
+                                            <div class="text-sm font-light text-gray-500">{{ $user->username }}</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="text-sm font-bold text-gray-600">{{ $user->total_skor_nilai }} pts</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div>
-                                <span class="text-sm font-bold text-gray-600">{{ $user->total_skor_nilai }} pts</span>
-                            </div>
+                            @php
+                            $i++;
+                            @endphp
+                        @if($i == 4)
                         </div>
+                        @endif
+                        @endforeach
                     </div>
-                    @php
-                        $i++;
-                    @endphp
-                    @endforeach
                 </div>
             </div>
         </div>

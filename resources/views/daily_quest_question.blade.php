@@ -40,7 +40,7 @@
     </x-sidebar>
     <div class="flex flex-row w-full text-gray-700 bg-red-500 dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div class="flex flex-col">
-            <a href="{{ url('/daily_quests') }}" class="w-24 px-4 py-2">
+            <a href="{{ url('/daily_quests') }}" class="w-24 px-4 py-2" onclick="soundClick();">
                 <img src="{{ asset('/assets/img/back.png') }}" alt="">
             </a>
         </div>
@@ -63,7 +63,7 @@
                             <div class="px-3 py-2 border-b box__title bg-grey-lighter"><h3 class="text-sm font-medium text-grey-darker">Answer</h3></div>
                             <input id="timer_hidden" type="hidden" name="timer">
                             <textarea class="flex-1 p-2 m-1 bg-transparent text-grey-darkest" name="answer"></textarea>
-                            <button type="submit" class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
+                            <button onclick="soundClick();" type="submit" class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
                                 Submit
                             </button>
                         </div>

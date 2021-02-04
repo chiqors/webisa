@@ -40,7 +40,7 @@
         <div class="flex flex-row w-full text-gray-700 bg-red-500 dark-mode:text-gray-200 dark-mode:bg-gray-800">
             <div class="container flex flex-col mt-5">
                 <div class="flex flex-col">
-                    <a href="{{ url('/explore') }}" class="w-24 px-4 py-2">
+                    <a href="{{ url('/explore') }}" class="w-24 px-4 py-2" onclick="soundClick();">
                         <img src="{{ asset('/assets/img/back.png') }}" alt="">
                     </a>
                 </div>
@@ -48,7 +48,6 @@
                     <div class="col-span-2">
                         <h1 class="pb-5 text-5xl font-bold uppercase">{{ $kategori }}</h1>
                         <div class="p-5 bg-gray-200">
-                            <h1 class="pb-5 text-3xl font-bold">{{ @$judul_materi ? $judul_materi : 'Home' }}</h1>
                             <p>{!! @$isi_materi ? $isi_materi : 'Halaman utama materi' !!}
                             </p>
                         </div>
@@ -61,7 +60,7 @@
                                 </li>
                                 @foreach ($explores as $ex)
                                 <li class="p-5 mb-2 bg-gray-200">
-                                    <a style="cursor: pointer"
+                                    <a style="cursor: pointer" onclick="soundClick();"
                                         wire:click="show({{ $ex->id }})">{{ $ex->judul_materi }}</a>
                                 </li>
                                 @endforeach

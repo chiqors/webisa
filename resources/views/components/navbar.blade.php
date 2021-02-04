@@ -24,7 +24,7 @@
     <div class="flex-grow block w-full lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow"></div>
         <div>
-            <a href="{{ url('/logout') }}"
+            <a href="{{ url('/logout') }}" onclick="soundClick();"
                 class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded hover:border-transparent hover:text-teal hover:bg-gray-200 lg:mt-0">Sign
                 Out</a>
         </div>

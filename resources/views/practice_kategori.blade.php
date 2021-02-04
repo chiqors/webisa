@@ -15,7 +15,7 @@
     </x-sidebar>
     <div class="flex flex-row w-full text-gray-700 bg-red-500 dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div class="flex flex-col">
-            <a href="{{ url('/practice') }}" class="w-24 px-4 py-2">
+            <a href="{{ url('/practice') }}" class="w-24 px-4 py-2" onclick="soundClick();">
                 <img src="{{ asset('/assets/img/back.png') }}" alt="">
             </a>
         </div>
@@ -23,7 +23,7 @@
             <div class="grid grid-cols-2">
                 @foreach ($practices as $prac)
                 <div class="m-5">
-                    <a href="{{ url('practice_question/'.$prac->id) }}"
+                    <a href="{{ url('practice_question/'.$prac->id) }}" onclick="soundClick();"
                         class="px-4 py-2 mx-2 text-lg font-bold text-center text-white bg-blue-500 border-b-4 border-blue-900 rounded w-44 hover:border-b-2 hover:border-t-2 hover:border-blue">
                         {{ $prac->judul_practice }}
                     </a>

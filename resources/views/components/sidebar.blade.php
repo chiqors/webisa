@@ -20,7 +20,7 @@
             <div
                 class="flex flex-row items-center justify-between h-16 p-4 my-2 border border-gray-100 rounded-lg shadow-md">
                 <div class="flex items-center">
-                    <span class="mr-3 font-bold text-green-500 text-md">{{ $i }} |</span>
+                    <span class="mr-3 font-bold {{ $i==1 ? 'text-yellow-500' : ($i==2 ? 'text-gray-500' : ($i==3 ? 'text-yellow-900' : 'text-red-400')) }} text-md">{{ $i }} |</span>
                     <div class="text-sm font-semibold text-gray-500">{{ $user->username }}</div>
                 </div>
                 <div>

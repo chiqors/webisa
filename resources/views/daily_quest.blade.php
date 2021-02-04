@@ -31,7 +31,7 @@
                                     <div class="flex items-center">
                                         <div
                                             class="absolute flex items-center justify-center w-10 h-10 bg-white bg-red-400 rounded-full shadow toggle__dot">
-                                            <a class="w-6 h-6 text-white" href="{{ url('/') }}">
+                                            <a onclick="soundClick();" class="w-6 h-6 text-white" href="{{ url('/') }}">
                                                 <svg fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -65,7 +65,7 @@
                                     $status = App\Models\Answer_Daily_Quest::where('daily_quest_id', $dq->id)->where('user_id', Auth::user()->id)->get();
                                     @endphp
                                     @if($status->isEmpty())
-                                    <a href="{{ url('daily_quests/question/'.$dq->id) }}" class="flex items-center justify-center p-2 bg-gray-400 rounded-full shadow-md hover:bg-gray-600">
+                                    <a href="{{ url('daily_quests/question/'.$dq->id) }}" onclick="soundClick();" class="flex items-center justify-center p-2 bg-gray-400 rounded-full shadow-md hover:bg-gray-600">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                     </a>
                                     @else

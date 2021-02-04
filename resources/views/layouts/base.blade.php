@@ -36,7 +36,7 @@
         @yield('body')
 
         <div
-            class="fixed flex items-center justify-center w-16 h-16 bg-white bg-red-400 rounded-full shadow bottom-5 left-5" style="cursor: pointer;">
+            class="fixed flex items-center justify-center w-16 h-16 bg-white bg-red-400 rounded-full shadow bottom-5 right-5" style="cursor: pointer;">
             <a id="toggle_music" onclick="toggleBG()" class="w-6 h-6 text-white">
             </a>
         </div>
@@ -107,7 +107,7 @@
             }
             setInterval(update,10);
 
-            function clickAction() {
+            function soundClick() {
                 var sound = document.getElementById("clickSound");
                 sound.play();
             }
