@@ -16,8 +16,12 @@ class User extends Authenticatable
      *
      * @var array
      */
+    // Timestamps
+    public $timestamps = false;
+
     protected $fillable = [
         'nama_siswa',
+        'username',
         'email',
         'password',
         'foto_profil',

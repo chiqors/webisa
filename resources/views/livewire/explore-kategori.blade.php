@@ -47,7 +47,7 @@
                 <div class="grid grid-cols-3 m-5">
                     <div class="col-span-2">
                         <h1 class="pb-5 text-5xl font-bold uppercase">{{ $kategori }}</h1>
-                        <div class="p-5 bg-gray-200">
+                        <div class="w-full p-5 bg-white rounded-lg shadow md:max-w-4xl">
                             <p>{!! @$isi_materi ? $isi_materi : 'Halaman utama materi' !!}
                             </p>
                         </div>
@@ -55,11 +55,11 @@
                     <div class="ml-5">
                         <div>
                             <ul>
-                                <li class="p-5 mb-2 bg-gray-200">
+                                <li class="p-5 mb-2 bg-gray-200 rounded-lg shadow">
                                     <a href="{{ url('/explore/'.$kategori) }}">Home</a>
                                 </li>
                                 @foreach ($explores as $ex)
-                                <li class="p-5 mb-2 bg-gray-200">
+                                <li class="p-5 mb-2 bg-gray-200 rounded-lg shadow">
                                     <a style="cursor: pointer" onclick="soundClick();"
                                         wire:click="show({{ $ex->id }})">{{ $ex->judul_materi }}</a>
                                 </li>

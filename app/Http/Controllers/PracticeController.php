@@ -23,7 +23,7 @@ class PracticeController extends Controller
         $data_get = Practice::where('kategori', $kategori)->get();
         $data = array(
             'practices' => $data_get,
-            'title' => 'Practice - '.$kategori
+            'title' => $kategori
         );
         return view('practice_kategori')->with($data);
     }

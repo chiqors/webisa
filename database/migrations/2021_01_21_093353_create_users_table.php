@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('username');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->string('password');
             $table->integer('total_skor_nilai')->default(0);
         });

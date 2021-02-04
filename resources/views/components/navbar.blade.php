@@ -10,7 +10,7 @@
             </g>
             </g>
         </svg>
-        <a href="/" class="text-xl font-semibold tracking-tight">{{ env('APP_NAME') }}</a>
+        <a onclick="soundClick();" href="/" class="text-xl font-semibold tracking-tight">{{ env('APP_NAME') }}</a>
     </div>
     <div class="block lg:hidden">
         <button

@@ -13,7 +13,7 @@
             <span class="text-center text-black">Total Point: <span class="font-bold">{{ Auth::user()->total_skor_nilai }} pts</span></span>
         </x-slot>
     </x-sidebar>
-    <div class="flex flex-row w-full text-gray-700 bg-red-500 dark-mode:text-gray-200 dark-mode:bg-gray-800">
+    <div class="flex flex-row w-full text-gray-700 bg-blue-300 dark-mode:text-gray-200 dark-mode:bg-gray-800" style="background: url({{ asset('assets/img/map3.png') }}); background-repeat: no-repeat; background-position: center; background-size: cover;">
         <div class="container flex flex-col m-auto">
             <div class="flex flex-row justify-center mb-5">
                 <div class="w-full bg-white rounded-lg shadow md:max-w-4xl">
